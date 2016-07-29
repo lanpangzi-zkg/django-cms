@@ -44,5 +44,5 @@
 </p>
 <h2>2.项目结构说明</h2>
 <p>
- 
+  <img src="https://raw.githubusercontent.com/putaomogu/django-cms/master/rmimg/project.png" alt="项目结构说明">
 </p>
