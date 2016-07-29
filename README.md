@@ -34,3 +34,15 @@
    <li>django</li>
    </ul>
 </p>
+<h2>2.项目创建</h2>
+<p>
+   <ul>
+   <li>创建项目文件夹</li>
+   <li>打开cmd命令，进入该文件夹，执行命令"django-admin startproject helloDjango"</li>
+   <li>cmd进入包含manage.py目录,运行"python manage.py runserver"启动服务器</li>
+   </ul>
+</p>
+<h2>2.项目结构说明</h2>
+<p>
+ 
+</p>
