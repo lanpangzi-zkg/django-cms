@@ -42,7 +42,17 @@
    <li>cmd进入包含manage.py目录,运行"python manage.py runserver"启动服务器</li>
    </ul>
 </p>
-<h2>2.项目结构说明</h2>
+<h2>3.项目结构说明</h2>
 <p>
   <img src="https://raw.githubusercontent.com/putaomogu/django-cms/master/rmimg/project.png" alt="项目结构说明">
+</p>
+<h2>4.开发总结</h2>
+<p> 
+   <ul>
+    <li>1.django自带数据库，因此在开发过程中直接使用该数据库，django也支持其他数据库；</li>
+    <li>2.django框架功能很完善，帮助开发者封装了很多网站开发的步骤，因此可以写少量代码即可实现功能比较丰富的web站点；</li>
+    <li>3.djando将库表映射成一个对象，因此操作起来十分方便与简单，让开发者不用关心具体的数据库操作；</li>
+    <li>4.django通过urls.py配置来实现路由管理，该配置灵活且简单，可以轻松实现优雅的访问地址和RESTful风格API;</li>
+    <li>5.django容许扩展Model对象，实现个性化需求。</li>
+  </ul>
 </p>
