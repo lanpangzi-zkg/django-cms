@@ -23,5 +23,5 @@
 </div>
 <div>
     <h3>文章编辑界面：</h3>
-    <img src="https://raw.githubusercontent.com/putaomogu/django-cms/master/rmimg/admin_eitt_a.png" alt="文章编辑界面">
+    <img src="https://raw.githubusercontent.com/putaomogu/django-cms/master/rmimg/admin_eidt_a.png" alt="文章编辑界面">
 </div>
