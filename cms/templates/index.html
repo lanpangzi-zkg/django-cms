@@ -1,0 +1,111 @@
+{% extends 'base.html'%}
+{% block title %}武汉新媒体行业协会-首页{% endblock %}
+{% block resource %}
+  <script src="http://www.bootcss.com/p/unslider/unslider.min.js"></script>
+{% endblock %}
+{% block content %} 
+   <div class="banner">
+       <ul>
+        {% for br in banners %}
+          <li style="background-image: url(/whmedia{{br.banner_image.url}}); background-size: 100% 100%;">
+            <a href="{{br.banner_url}}">
+            </a>
+          </li>
+        {% endfor %}
+       </ul>
+   </div>
+   <div class="content">
+     <div class="content-t content-cell-1">
+       <div class="title-box">
+        <i class="icon icon_top"></i>
+        <span class="title">行业资讯</span>
+        <span class="en">INDUSTRY INFORMATION</span>
+        <a href="../channel/{{hyzx_channel_id}}" class="more">更多>></a>
+      </div>
+       <div class="main-box">
+         <ul>
+          {% for article in hyzx_articles %}
+            <li class="news-{{forloop.counter}}"> 
+            <a href="{%url 'article' article.id%}">
+              <img class="lazy" data-original="/media/{{article.article_icon|default:'no_pic.png'}}" alt="icon" class="short-icon">
+              <div class="item">
+                <p class="item-title">{{article.article_name|slice:"15"}}</p>
+                <div class="item-content">{{article.article_guidance|safe|slice:"40"}}</div>
+              </div>
+            </a>
+          </li>
+          {% endfor %}
+        </ul>
+        <div class="clearfix"></div>
+       </div>
+     </div>
+     <div class="content-l content-cell-2">
+      <div class="title-box">
+        <i class="icon icon_left"></i>
+        <span class="title">通知公告</span>
+        <span class="en">NOTIFICATION ANNOUNCEMENT</span>
+        <a href="../channel/{{tzgg_channel_id}}" class="more">更多>></a>
+      </div>
+      <div class="main-box">
+         <ul>
+          {% for article in tzgg_articles %}
+          <li>
+            <a href="{%url 'article' article.id%}">              
+              <img class="lazy" data-original="/whmedia/{{article.article_icon|default:'media/no_pic.png'}}" alt="icon" class="short-icon">
+              <div class="item">
+                <p class="item-title">{{article.article_name}}</p>
+                <div class="item-content">{{article.article_guidance|safe|slice:"40"}}</div>
+              </div>
+            </a>
+          </li>
+          {% endfor %}
+        </ul>
+        <div class="clearfix"></div>
+      </div>
+     </div>
+     <div class="content-r content-cell-2">
+       <div class="title-box">
+        <i class="icon icon_right"></i>
+        <span class="title">会员动态</span>
+        <span class="en">MEMBER DYNAMICS</span>
+        <a href="../channel/{{hydt_channel_id}}" class="more">更多>></a>
+      </div>
+      <div class="main-box">
+         <ul>
+          {% for article in hydt_articles %}
+          <li>
+            <a href="{%url 'article' article.id%}">
+              <img class="lazy" data-original="/whmedia/{{article.article_icon|default:'media/no_pic.png'}}" alt="icon" class="short-icon">
+              <div class="item">
+                <p class="item-title">{{article.article_name}}</p>
+                <div class="item-content">{{article.article_guidance|safe|slice:"40"}}</div>
+              </div>
+            </a>
+          </li>
+          {% endfor %}
+         </ul>
+         <div class="clearfix"></div>
+      </div>
+     </div>
+     <div class="clearfix"></div>
+   </div>
+{% endblock %}
+
+{% block js %}
+   <script type="text/javascript">
+    $(document).ready(function(){
+      $('.banner').unslider({
+        speed: 500,               
+        delay: 3000,              
+        complete: function() {}, 
+        keys: true,  
+        arrows: false,             
+        dots: true,          
+        fluid: false  
+      });
+      $("img.lazy").lazyload({
+         effect : "fadeIn"
+      });
+    });
+   </script
+{% endblock %}

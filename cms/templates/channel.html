@@ -1,0 +1,89 @@
+{% extends 'base.html'%}
+{%block title%}channel{%endblock%}
+{%block content%}
+<div class="hor-line"></div>
+   {% if is_single_page == '1' %} 
+      <div class="article-position">
+        <ul>
+          <li class="tips">
+            <span>当前位置:</span>
+          </li>
+          <li>
+            <a href="../../index">首页</a>
+          </li>
+          <li class="arrow">
+            <span>></span>
+          </li>
+          <li>
+            <a href="#">{{channel_name}}</a>
+          </li>
+          <div class="clearfix"></div>
+        </ul>
+      </div>
+      <div class="article-main">
+         <p class="article-title">{{single_article.article_name|safe}}</p>
+         <p class="article-content">{{single_article.article_content|safe}}</p>
+      </div>
+   {% else %}
+    <div class="main">
+      <div class="chn-header">
+        <div class="title-box">
+          <i class="icon icon_top"></i>
+          <span class="title">{{channel_name}}</span>
+          <!-- <span class="en">INDUSTRY INFORMATION</span> -->
+        </div>
+        <div class="position">
+          <ul>
+            <li><a href="../../index">首页</a></li>
+            <li class="arrow"><span>></span></li>
+            <li><a href="#">{{channel_name}}</a></li>
+          </ul>
+        </div>
+      </div>
+      <ul class="chn">
+       {%for item in artlist%}
+        <li>
+          <a href="{% url 'article' item.id %}">
+            <div class="article-box">
+              <p>{{item.article_name}}</p>
+              <div class="article-content">{{item.article_guidance|safe|slice:"40"}}</div>
+              <div class="article-extra">
+                <span class="date">时间:{{item.add_date}}</span>
+                <span class="read-num">阅读:{{item.visit}}</span>
+              </div>
+            </div>
+            <div class="article-img">
+              <img class="lazy" data-original="/media/{{item.article_icon|default:'no_pic.png'}}" alt="icon" class="short-icon">
+            </div>
+          </a>
+        </li>
+       {%endfor%}
+      </ul>
+      <div class="pagination">
+          <span class="step-links">
+              {% if artlist.has_previous %}
+                  <a href="?page={{ artlist.previous_page_number }}">上一页</a>
+              {% endif %}
+
+              <span class="current">
+                  第 {{ artlist.number }}页 / {{ artlist.paginator.num_pages }}页
+              </span>
+
+              {% if artlist.has_next %}
+                  <a href="?page={{ artlist.next_page_number }}">下一页</a>
+              {% endif %}
+          </span>
+          <span class="page-info">共{{count}}条记录，共{{ artlist.paginator.num_pages }}页</span>
+      </div> 
+    </div> 
+   {% endif %}
+{%endblock%}
+{% block js %}
+   <script type="text/javascript">
+    $(document).ready(function(){
+      $("img.lazy").lazyload({
+         effect : "fadeIn"
+      });
+    });
+   </script>
+{% endblock %}

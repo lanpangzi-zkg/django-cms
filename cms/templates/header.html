@@ -1,0 +1,25 @@
+<div class="header">
+    <a href="#"><div class="logo"></div></a>
+    <ul class="nav">
+        <li class="index"><a href="{%url 'index'%}">首页</a></li>
+        {%for item in headerNav %}
+        <li>
+            <a href="{% url 'channel' item.id %}">
+                {{item}}
+            </a>
+        </li>
+        {%endfor%}
+    </ul>
+    <div class="header_line_box">
+        <div class="header_line bottom"></div>  
+        <div class="header_line top fir"></div>
+        <div class="header_line top"></div>
+        <div class="header_line top"></div>
+        <div class="header_line top"></div>
+        <div class="header_line top"></div>      
+    </div>
+    <div class="search_box">
+        <input type="text" class="txt_search">
+        <input type="button"  class="btn_seach"value="GO">
+    </div>
+</div>

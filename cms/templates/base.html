@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+ <head>
+ 	<meta charset="utf-8">
+    {% load staticfiles %}
+ 	<title>{%block title%}武汉新媒体行业协会{%endblock%}</title>
+ 	<link rel="stylesheet" type="text/css" href="{% static 'common.css'%}">
+    <script src="http://cdn.bootcss.com/jquery/1.9.1/jquery.min.js"></script>
+    <script src="http://www.appelsiini.net/projects/lazyload/jquery.lazyload.js?v=1.9.1"></script>
+    {%block resource%}
+    {%endblock%}
+ </head>
+ <body>
+ 	{%include 'header.html'%}
+ 	{%block content%}haha{%endblock%}
+ 	{%include 'footer.html'%}
+ </body>
+ {%block js%}
+ {%endblock%}
+</html>
