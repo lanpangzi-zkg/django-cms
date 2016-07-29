@@ -11,7 +11,7 @@
 </div>
 <div>
     <h3>文章：</h3>
-    <img src="https://raw.githubusercontent.com/putaomogu/django-cms/master/rmimg/artcile.png" alt="文章">
+    <img src="https://raw.githubusercontent.com/putaomogu/django-cms/master/rmimg/article.png" alt="文章">
 </div>
 <div>
     <h3>管理主界面：</h3>
@@ -23,5 +23,5 @@
 </div>
 <div>
     <h3>文章编辑界面：</h3>
-    <img src="https://raw.githubusercontent.com/putaomogu/django-cms/master/rmimg/admin_edit_a.png" alt="文章编辑界面">
+    <img src="https://raw.githubusercontent.com/putaomogu/django-cms/master/rmimg/admin_eitt_a.png" alt="文章编辑界面">
 </div>
