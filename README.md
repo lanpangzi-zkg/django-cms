@@ -25,3 +25,12 @@
     <h3>文章编辑界面：</h3>
     <img src="https://raw.githubusercontent.com/putaomogu/django-cms/master/rmimg/admin_eidt_a.png" alt="文章编辑界面">
 </div>
+<h1>开发说明：</h1>
+<h2>1.开发工具</h2>
+<p>
+   <ul>
+   <li>python</li>
+   <li>包管理工具pip</li>
+   <li>django</li>
+   </ul>
+</p>
